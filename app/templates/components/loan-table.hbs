@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Rate</th>
+      <th>Installment</th>
+      <th>Capital</th>
+      <th>Interest</th>
+      <th>Outstanding</th>
+    </tr>
+  </thead>
+  {{#if payments_array }}
+  <tbody>
+    {{#each this.payments_array as |event|}}
+      <tr>
+        <td>{{ get event 0 }}</td>
+        <td>{{ get event 1 }}</td>
+        <td>{{ get event 2 }}</td>
+        <td>{{ get event 3 }}</td>
+        <td>{{ get event 4 }}</td>
+        <td>{{ get event 5 }}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+{{/if}}
+</table>
+{{log this.rval_obj }}
+{{log this.payments_array }}
+
+{{yield}}
